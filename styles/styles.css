@@ -1,0 +1,207 @@
+:root {
+    --color-primary-blue: hsl(215, 51%, 70%);
+    --color-primary-cyan: hsl(178, 100%, 50%);
+    --color-white: hsl(0, 0%, 100%);
+    --color-blue-light: hsl(215, 32%, 27%);
+    --color-blue: hsl(216, 50%, 16%);
+    --color-blue-dark: hsl(217, 54%, 11%);
+}
+
+@font-face {
+    font-family: 'Outfit';
+    font-style: normal;
+    font-weight: 300;
+    font-display: swap;
+    src: local(''),
+        url('../fonts/outfit-300.woff2') format('woff2'),
+        url('../fonts/outfit-300.woff') format('woff');
+}
+
+@font-face {
+    font-family: 'Outfit';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: local(''),
+        url('../fonts/outfit-400.woff2') format('woff2'),
+        url('../fonts/outfit-400.woff') format('woff');
+}
+
+@font-face {
+    font-family: 'Outfit';
+    font-style: normal;
+    font-weight: 600;
+    font-display: swap;
+    src: local(''),
+        url('../fonts/outfit-600.woff2') format('woff2'),
+        url('../fonts/outfit-600.woff') format('woff');
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+.page {
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+    font-family: 'Outfit', sans-serif;
+    font-size: 18px;
+    color: var(--color-primary-blue);
+    background-color: var(--color-blue-dark);
+}
+
+.page__main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 1;
+    padding: 80px 25px;
+}
+
+.page__footer {
+    margin-top: auto;
+    padding: 20px 25px;
+    text-align: center;
+    background-color: var(--color-blue);
+}
+
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+    overflow: hidden;
+    white-space: nowrap;
+    border: 0;
+    clip: rect(0 0 0 0);
+    clip-path: inset(100%);
+}
+
+.link {
+    text-decoration: none;
+    color: var(--color-white);
+}
+
+.link:hover,
+.link:focus {
+    color: var(--color-primary-cyan);
+}
+
+.card {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    max-width: 350px;
+    padding: 25px;
+    background-color: var(--color-blue);
+    border-radius: 15px;
+}
+
+.card__title {
+    margin: 0 0 15px;
+    font-weight: 600;
+    color: var(--color-white);
+}
+
+.card__preview {
+    position: relative;
+    order: -1;
+    margin-bottom: 25px;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.card__preview::before {
+    --color-primary-cyan: hsla(178, 100%, 50%, .6);
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: none;
+    background-color: var(--color-primary-cyan);
+    background-image: url("../images/icon-view.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.card__preview:hover::before,
+.card__preview:focus::before {
+    display: block;
+}
+
+.card__image {
+    width: 100%;
+    height: auto;
+}
+
+.card__desc {
+    margin: 0 0 25px;
+    font-weight: 300;
+    line-height: 1.5;
+}
+
+.card__price {
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    margin-right: 16px;
+    line-height: 1;
+    color: var(--color-primary-cyan);
+}
+
+.card__price::before {
+    content: "";
+    display: block;
+    width: 18px;
+    height: 18px;
+    background-image: url("../images/icon-ethereum.svg");
+    background-repeat: no-repeat;
+    background-position: left center;
+    background-size: auto 100%;
+}
+
+.card__time {
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    line-height: 1;
+}
+
+.card__time::before {
+    content: "";
+    display: block;
+    width: 25px;
+    height: 18px;
+    background-image: url("../images/icon-clock.svg");
+    background-repeat: no-repeat;
+    background-position: left center;
+    background-size: auto 100%;
+}
+
+.card__footer {
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    width: 100%;
+    margin-top: 20px;
+    padding-top: 15px;
+    border-top: 1px solid var(--color-blue-light);
+}
+
+.card__avatar {
+    margin-right: 18px;
+}
+
+.card__author {
+    margin: 0;
+    font-weight: 300;
+}
