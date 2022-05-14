@@ -51,7 +51,8 @@
     margin: 0;
     padding: 0;
     font-family: 'Outfit', sans-serif;
-    font-size: 18px;
+    font-size: 16px;
+    line-height: 20px;
     color: var(--color-primary-blue);
     background-color: var(--color-blue-dark);
 }
@@ -61,7 +62,7 @@
     justify-content: center;
     align-items: center;
     flex-grow: 1;
-    padding: 80px 25px;
+    padding: 24px;
 }
 
 .page__footer {
@@ -99,27 +100,30 @@
     flex-wrap: wrap;
     justify-content: space-between;
     max-width: 350px;
-    padding: 25px;
+    padding: 24px;
+    padding-bottom: 32px;
     background-color: var(--color-blue);
     border-radius: 15px;
 }
 
 .card__title {
-    margin: 0 0 15px;
+    margin: 0 0 12px;
     font-weight: 600;
+    font-size: 22px;
+    line-height: 28px;
     color: var(--color-white);
 }
 
 .card__preview {
     position: relative;
     order: -1;
-    margin-bottom: 25px;
+    margin-bottom: 24px;
     border-radius: 8px;
     overflow: hidden;
 }
 
 .card__preview::before {
-    --color-primary-cyan: hsla(178, 100%, 50%, .6);
+    --color-primary-cyan: hsla(178, 100%, 50%, .5);
     content: "";
     position: absolute;
     top: 0;
@@ -140,13 +144,16 @@
 
 .card__image {
     width: 100%;
-    height: auto;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
 }
 
 .card__desc {
     margin: 0 0 25px;
     font-weight: 300;
-    line-height: 1.5;
+    font-size: 18px;
+    line-height: 26px;
 }
 
 .card__price {
@@ -154,7 +161,7 @@
     flex-wrap: nowrap;
     align-items: center;
     margin-right: 16px;
-    line-height: 1;
+    font-weight: 600;
     color: var(--color-primary-cyan);
 }
 
@@ -173,7 +180,6 @@
     display: flex;
     flex-wrap: nowrap;
     align-items: center;
-    line-height: 1;
 }
 
 .card__time::before {
@@ -192,16 +198,24 @@
     flex-wrap: nowrap;
     align-items: center;
     width: 100%;
-    margin-top: 20px;
-    padding-top: 15px;
+    margin-top: 24px;
+    padding-top: 16px;
     border-top: 1px solid var(--color-blue-light);
 }
 
+.card__avatar-container {
+    width: 33px;
+    height: 33px;
+    margin-right: 16px;
+    border: 1px solid var(--color-white);
+    border-radius: 50%;
+}
+
 .card__avatar {
-    margin-right: 18px;
+    width: 100%;
+    height: auto;
 }
 
 .card__author {
     margin: 0;
-    font-weight: 300;
 }
